@@ -1,0 +1,298 @@
+body {
+  margin: 1vw;
+  background-color: black;
+  color: white;
+  font-family: "Ubuntu", serif;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .bar {
+  display: none;
+  width: 5vw;
+  padding-right: 3vw;
+}
+
+nav ul {
+  display: flex;
+  gap: 2vw;
+  padding-right: 5vw;
+  margin: 0;
+}
+
+nav li {
+  list-style-type: none;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+nav li a {
+  text-decoration: none;
+  font-family: "Inter", serif;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.632);
+}
+
+nav li a:hover {
+  transition: 0.5s ease-in-out;
+  color: rgb(255, 255, 255);
+}
+
+nav li a::after {
+  content: "";
+  position: absolute;
+  height: 0.2rem;
+  width: 0%;
+  background-color: rgb(25, 251, 255);
+  left: 50%;
+  bottom: -0.5rem;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+nav li a:hover::after {
+  opacity: 1;
+  width: 80%;
+}
+
+.hero {
+  display: flex;
+  margin-top: 10vh;
+  gap: 5vw;
+}
+
+.hero .info {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 3vw;
+}
+
+.hero .info h3 {
+  letter-spacing: 3px;
+  margin-bottom: 3vh;
+}
+
+.hero .info h1 {
+  letter-spacing: 1px;
+  margin: 0 0 2vh 0;
+  font-size: 4rem;
+}
+
+.hero .info h2 {
+  margin: 0 0 4vh 0;
+  font-size: 3rem;
+}
+
+.hero .info h2 span {
+  position: relative;
+  color: aqua;
+}
+
+.hero .info h2 span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  height: 100%;
+  top: 0;
+  border-left: 1px solid aqua;
+  right: -10px;
+  color: aqua;
+  overflow: hidden;
+  animation: cursor-type 1s linear infinite, typing 7s ease-in-out infinite;
+}
+
+nav .web-logo img {
+  width: 30vw;
+  height: 7vw;
+}
+
+@keyframes cursor-type {
+  to {
+    border-left: 2px solid transparent;
+  }
+}
+
+@keyframes typing {
+  0%,
+  60%,
+  100% {
+    width: 0;
+  }
+  90% {
+    width: calc(100% + 10px);
+  }
+}
+
+.hero .info .detail {
+  margin: 0 0 5vh 0;
+}
+
+.hero .info .btn {
+  display: flex;
+  gap: 2vw;
+}
+
+.hero .info .btn .cvbtn {
+  width: max-content;
+  height: max-content;
+  border: 1px solid transparent;
+  border-radius: 40px;
+  cursor: pointer;
+  background-color: rgb(31, 6, 255);
+  position: relative;
+}
+
+.hero .info .btn .cvbtn:hover {
+  transition: 0.3s ease-in-out;
+  background-color: rgb(72, 6, 255);
+  box-shadow: 0 0 30px rgb(72, 6, 255);
+}
+
+.hero .info .btn .cvbtn h3 {
+  margin: 0;
+  padding: 1rem;
+  letter-spacing: 1px;
+}
+
+.hero .info .btn .workbtn {
+  width: max-content;
+  height: max-content;
+  border: 1px solid white;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+.hero .info .btn .workbtn:hover {
+  transition: 0.3s ease-in-out;
+  background-color: white;
+  box-shadow: 0 0 30px white;
+  color: black;
+}
+
+.hero .info .btn .workbtn h3 {
+  margin: 0;
+  padding: 1rem;
+  letter-spacing: 1px;
+}
+
+.hero .mypicture {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  height: max-content;
+  z-index: -1;
+  position: relative;
+}
+
+.hero .mypicture img {
+  position: absolute;
+  width: 50vh;
+  top: -8vw;
+  left: 0;
+  z-index: -1;
+}
+
+@media (max-width: 1147px) {
+  nav .web-logo img {
+    width: 23vw;
+    height: 6vw;
+  }
+
+  nav ul li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 881px) {
+  nav .web-logo img {
+    width: 25vw;
+    height: 7vw;
+  }
+
+  nav ul li {
+    display: none;
+  }
+
+  .hero .info h2 {
+    margin: 0 0 4vh 0;
+    font-size: 2rem;
+  }
+
+  .hero .info h2 span::after {
+    height: 110%;
+  }
+
+  .hero .info h1 {
+    font-size: 3rem;
+  }
+
+  .hero .info p {
+    font-size: 1rem;
+  }
+
+  .hero .mypicture img {
+    width: 40vh;
+    top: -5vw;
+  }
+
+  nav {
+    margin: 3vw;
+  }
+
+  nav .bar {
+    display: block;
+  }
+}
+
+@media (max-width: 658px) {
+  nav .web-logo img {
+    width: 35vw;
+    height: 10vw;
+  }
+
+  .hero .info {
+    display: flex;
+    text-align: center;
+  }
+
+  .hero .info p {
+    padding-left: 2vw;
+    text-align: left;
+  }
+
+  .hero .info .btn {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .hero .info h3 {
+    font-size: 1rem;
+  }
+
+  .hero .info h1 {
+    font-size: 2rem;
+  }
+
+  .hero .info h2 {
+    font-size: 1.5rem;
+    white-space: nowrap;
+  }
+
+  .hero .info p {
+    font-size: 0.8rem;
+  }
+
+  .hero .mypicture img {
+    left: -10vw;
+    top: 7vh;
+    width: 30vh;
+  }
+}
